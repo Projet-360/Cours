@@ -48,16 +48,14 @@ app.get('/', function (req, res) {
 app.get('/about', function (req, res) {
   initApi(req).then( api =>{
     api.query(
-    Prismic.Predicates.at('document.type', 'about')
+      Prismic.Predicates.any('document.type', ['meta','about'])
     ).then(response => {
-      console.log(response)
-      res.render('pages/about', {
-        meta: {
-          data: {
-            title:'floema',
-            description:'the description'
-          }
-        }
+      const {results} = response
+      const [about, meta]  = results
+      
+      res.render('pages/about', {        
+        about,
+        meta
       })
     })
   })
