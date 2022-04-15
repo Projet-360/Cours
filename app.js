@@ -34,7 +34,7 @@ app.use( (req, res, next)  => {
 app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'pug')
 
-app.get('/', function (req, res) {
+app.get('/', (req, res) => {
   res.render('pages/home', {
     meta: {
       data: {
@@ -45,29 +45,20 @@ app.get('/', function (req, res) {
   })
 })
 
-app.get('/about', function (req, res) {
+app.get('/about', (req, res) => {
   initApi(req).then( api =>{
-    api.query(
-      Prismic.Predicates.any('document.type', ['meta','about'])
-    ).then(response => {
-      const {results} = response
-      const [about, meta]  = results
-      
-      console.log(about, meta);
+    const api = await initApi(req)
+    const about = await api.getSingle('about')
+    const meta = await api.getSingle('meta')
 
-      about.data.gallery.forEach(media => {
-        console.log(media);
-      })
-
-      res.render('pages/about', {        
-        about,
-        meta
-      })
+    res.render('pages/about', {        
+      about,
+      meta
     })
   })
 })
 
-app.get('/collection', function (req, res) {
+app.get('/collection', (req, res) => {
   res.render('pages/collection', {
     meta: {
       data: {
@@ -78,14 +69,14 @@ app.get('/collection', function (req, res) {
   })
 })
 
-app.get('/detail/:uid', function (req, res) {
-  res.render('pages/detail', {
-    meta: {
-      data: {
-        title:'floema',
-        description:'the description'
-      }
-    }
+app.get('/detail/:uid', async (req, res) => {
+  const api = await initApi(req)
+  const product = await api.getByUID('product')
+  const meta = await api.getSingle('meta')
+  
+  res.render('pages/about', {        
+    product,
+    meta
   })
 })
 
