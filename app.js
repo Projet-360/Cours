@@ -6,6 +6,8 @@ const errorHandler = require('errorhandler')
 const bodyParser = require('body-parser')
 const methodOverride = require('method-override')
 
+
+
 const app = express()
 const path = require('path')
 
@@ -14,6 +16,7 @@ app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(methodOverride())
 app.use(errorHandler())
+app.use(express.static(__dirname + '/public'));
 
 const Prismic = require('@prismicio/client')
 const PrismicDOM = require('prismic-dom')
