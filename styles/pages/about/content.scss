@@ -3,17 +3,14 @@
   justify-content: center;
   margin: 20rem auto;
   position: relative;
+  // width: 125.8rem;
 
-  &:first-child {
+  &:first-child{
     margin-top: 0;
   }
 
-  &:last-child {
+  &:last-child{
     margin-bottom: 0;
-  }
-
-  &:nth-child(3) {
-    margin-top: 30rem;
   }
 
   &:nth-child(5) {
@@ -24,11 +21,7 @@
     justify-content: flex-start;
   }
 
-  &:nth-child(9) {
-    margin-top: 40rem;
-  }
-
-  @include media('<phone') {
+  @include media('<phone'){   
     &:nth-child(5) {
       justify-content: flex-end;
     }
@@ -39,14 +32,14 @@
   }
 }
 
-.about__content__wrapper {
+.about__content_wrapper {
   display: flex;
 
   .about__content--right & {
     flex-direction: row-reverse;
   }
 
-  @include media('<phone') {
+  @include media('<phone'){
     .about__content:nth-child(3) & {
       flex-direction: column-reverse;
     }
@@ -65,13 +58,13 @@
   }
 }
 
-.about__content__box {
+.about__content__box{
   display: flex;
 
-  @include media('<=phone') {
+  @include media('<phone'){
     margin: auto;
     width: 60.9rem;
-
+ 
     .about__content:nth-child(3) & {
       margin-top: 10rem;
     }
@@ -91,49 +84,37 @@
 }
 
 .about__content__label {
-  font-size: 1.2rem;
-  letter-spacing: 0.032rem;
-  line-height: 2;
-  text-transform: uppercase;
-  width: 18rem;
+  @extend %description-12;
 
-  @include media('<=phone') {
+  width: 18rem;
+  text-transform: uppercase;
+
+  @include media('<=phone'){
     font-size: 2.4rem;
-    line-height: 1.5;
     padding-right: 2.5rem;
     width: 15rem;
-  }
+}
 }
 
 .about__content__description {
   width: 36.2rem;
-
-  a {
-    @extend %link;
-
-    color: $color-white;
-
-    &:after {
-      bottom: 0.3rem;
-    }
-  }
-
-  p:not(:first-child) {
+  white-space: pre-wrap;
+  
+  p:not(:first-child){
     margin-top: 2.5rem;
   }
 
-  @include media('<=phone') {
-    width: calc(100% - 15rem);
+  @include media('<=phone'){
+      width: calc(100% - 15rem);
   }
 }
 
 .about__content__media {
-  overflow: hidden;
   position: relative;
 
   .about__content:nth-child(3) & {
     height: 80.8rem;
-    margin-left: 18rem;
+    margin-left: 17.8rem;
     width: 53.8rem;
   }
 
@@ -155,11 +136,11 @@
     width: 60.8rem;
   }
 
-  @include media('<=phone') {
+  @include media('<=phone'){
     .about__content:nth-child(3) & {
       height: 91.4rem;
       margin-left: 0;
-      width: 60.9rem;
+      width: 60.9rem; 
     }
 
     .about__content:nth-child(5) & {

@@ -1,16 +1,14 @@
 .about__gallery {
   height: 58.6rem;
-  margin: 15rem 0;
+  margin: 20rem 0;
   overflow: hidden;
-  pointer-events: none;
   position: relative;
-  visibility: hidden;
 
-  &:first-child {
+  &:first-child{
     margin-top: 0;
   }
 
-  &:last-child {
+  &:last-child{
     margin-bottom: 0;
   }
 }
@@ -23,7 +21,7 @@
   transform: translateY(-50%);
 }
 
-.about__gallery__media {
+.about__gallery__media  {
   height: 43.7rem;
   margin: 0 4rem;
   position: relative;

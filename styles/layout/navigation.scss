@@ -1,27 +1,21 @@
 .navigation {
   @extend %cover;
 
-  color: $color-quarter-spanish-white;
-  pointer-events: none;
   position: fixed;
-  z-index: z('navigation');
+  pointer-events: none;
+  color: $color-quarter-spanish-white;
+  z-index: map-get($z-index, navigation);
 }
 
-.navigation__link {
-  font-size: 0;
+.navigation__link{
   height: 2rem;
   left: 4rem;
   pointer-events: auto;
   position: absolute;
   top: 4rem;
-  transition: opacity 0.4s ease;
   width: 12.8rem;
-
-  &:hover {
-    opacity: 0.5;
-  }
-
-  @include media('<phone') {
+  
+  @include media('<phone'){
     height: 4.3rem;
     left: 5rem;
     top: 5rem;
@@ -29,7 +23,7 @@
   }
 }
 
-.navigation__link__icon {
+.navigation__link__icon{
   display: block;
 }
 
@@ -44,9 +38,6 @@
   top: 4rem;
 }
 
-.navigation__list__link {
-  @extend %link--hidden;
-  @extend %title-24;
-
-  display: block;
+.navigation__list_link {
+  @extend %title-20;
 }
