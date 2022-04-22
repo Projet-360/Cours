@@ -90,7 +90,7 @@ app.get('/about', async (req, res) => {
   const api = await initApi(req)
   const defaults = await handleRequest(api)
   const about = await api.getSingle('about')
-
+  console.log(about.data.body[2].primary.title1);
   res.render('pages/about', {    
     ...defaults,       
     about
@@ -117,6 +117,8 @@ app.get('/detail/:uid', async (req, res) => {
   const api = await initApi(req)
   const defaults = await handleRequest(api)
   const product = await api.getByUID('product', req.params.uid,{ fetchLinks : 'collection.title' })
+
+  console.log(product.data);
 
   res.render('pages/detail', {
     ...defaults,       

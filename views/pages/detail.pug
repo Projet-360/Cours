@@ -19,12 +19,11 @@ block content
             each highlight in product.data.highlights
               p.detail__information__highlight
                 svg.detail__information__highlight__icon
-                  use(xlink:href=`sprite-#{highlight.highlights_text}`)
-
+                  use(xlink:href=`sprite-${highlight.highlights_icon}`)
                 //- for having text inside a paragraph can use the concatenator syntax with #
                 //- | #{highlight.highlights_text} 
 
-                span.detail__information__highlight__text!=highlight.highlights_text
+                span.detail__information__highlight__text=highlight.highlights_text
 
           .detail__information__list
             each item in product.data.informations  
