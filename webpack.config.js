@@ -141,18 +141,17 @@ module.exports = {
               [
                 "svgo",
                 {
-                  plugins: extendDefaultPlugins([
-                    {
-                      name: "removeViewBox",
-                      active: false,
-                    },
-                    {
-                      name: "addAttributesToSVGElement",
-                      params: {
-                        attributes: [{ xmlns: "http://www.w3.org/2000/svg" }],
+                  name: 'preset-default',
+                  params: {
+                    overrides: {
+                      // customize options
+                      builtinPluginName: {
+                        optionName: 'optionValue',
                       },
+                      // or disable plugins
+                      anotherBuiltinPlugin: false,
                     },
-                  ]),
+                  },
                 },
               ],
             ],

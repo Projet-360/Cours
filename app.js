@@ -90,7 +90,6 @@ app.get('/about', async (req, res) => {
   const api = await initApi(req)
   const defaults = await handleRequest(api)
   const about = await api.getSingle('about')
-  console.log(about.data.body[2].primary.title1);
   res.render('pages/about', {    
     ...defaults,       
     about
@@ -105,7 +104,6 @@ app.get('/collections', async (req, res) => {
 
   const { results: collections} = await api.query(Prismic.Predicates.at('document.type', 'collection'),{ fetchLinks : 'product.image' })
 
-  console.log(collections[0].data.products[0].products_product);
   res.render('pages/collections', {
     ...defaults,
     home,
@@ -117,8 +115,6 @@ app.get('/detail/:uid', async (req, res) => {
   const api = await initApi(req)
   const defaults = await handleRequest(api)
   const product = await api.getByUID('product', req.params.uid,{ fetchLinks : 'collection.title' })
-
-  console.log(product.data);
 
   res.render('pages/detail', {
     ...defaults,       
