@@ -1,8 +1,9 @@
 .collections {
-  @extend %cover;
-
+  @extend %page;
+  
   background: $color-quicksand;
   color: $color-quarter-spanish-white;
+  opacity: 0;
 }
 
 .collections__wrapper {

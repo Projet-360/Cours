@@ -12,7 +12,10 @@ class App {
         this.createPreloader()
         this.creatContent()
         this.createPages()
+
+        this.addEventListeners()
         this.addLinkListeners()
+        this.update()
     }
 
     createPreloader() {
@@ -35,7 +38,7 @@ class App {
 
         this.page = this.pages[this.template]
         this.page.create()
-        
+        this.page.onResize()
     }
 
     onPreloaded() {
@@ -64,10 +67,29 @@ class App {
 
             this.page = this.pages[this.template]
             this.page.create()
+            this.page.onResize()
             this.page.show()
         } else {
             console.log("C'est la merde mon gars !");
         }
+    }
+
+    onResize() {
+        if (this.page && this.page.onResize) {
+            this.page.onResize()
+        }
+    }
+
+    update() {
+        if (this.page && this.page.update) {
+            this.page.update()
+        }
+
+        this.frame = window.requestAnimationFrame(this.update.bind(this))   
+    }
+
+    addEventListeners() {
+        window.addEventListener('resize', this.onResize.bind(this))
     }
 
     addLinkListeners () {

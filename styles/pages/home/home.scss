@@ -1,9 +1,10 @@
 .home {
-  @extend %cover;
   @extend %center;
+  @extend %page;
 
   background: $color-contessa;
   color: $color-quarter-spanish-white;
+  opacity: 0;
   overflow: hidden;
   text-align: center;
 

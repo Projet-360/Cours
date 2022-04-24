@@ -1,9 +1,10 @@
 .detail {
-  @extend %cover;
   @extend %center;
+  @extend %page;
 
   background: $color-quicksand;
   color: $color-quarter-spanish-white;
+  opacity: 0;
 
   @include media('<phone'){
     height: auto;
