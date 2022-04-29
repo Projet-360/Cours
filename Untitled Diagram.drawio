@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2022-04-29T03:56:49.226Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36" etag="xZk2Kiuj1aGqdsSdyNHr" version="17.4.6" type="github">
+<mxfile host="app.diagrams.net" modified="2022-04-29T04:04:20.989Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36" etag="q6pw6PsJQFdjcUyzpaNT" version="17.4.6" type="github">
   <diagram id="fzjIs2RXk_FmtYsyeLxV" name="Page-1">
     <mxGraphModel dx="1422" dy="762" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -11,9 +11,6 @@
           <mxGeometry x="80" y="80" width="120" height="80" as="geometry" />
         </mxCell>
         <mxCell id="SWCMXGWF6MoDXP4iUfNa-11" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="SWCMXGWF6MoDXP4iUfNa-8" target="SWCMXGWF6MoDXP4iUfNa-10">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="SWCMXGWF6MoDXP4iUfNa-14" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="SWCMXGWF6MoDXP4iUfNa-8" target="SWCMXGWF6MoDXP4iUfNa-13">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="SWCMXGWF6MoDXP4iUfNa-8" value="CreatePreloader()" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
@@ -41,9 +38,6 @@
         </mxCell>
         <mxCell id="SWCMXGWF6MoDXP4iUfNa-18" value="EventEmitter" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="240" y="80" width="120" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="SWCMXGWF6MoDXP4iUfNa-57" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="SWCMXGWF6MoDXP4iUfNa-23" target="SWCMXGWF6MoDXP4iUfNa-52">
-          <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="SWCMXGWF6MoDXP4iUfNa-23" value="&lt;span&gt;once completed&lt;/span&gt;&lt;br&gt;&lt;span&gt;EventEmitter&lt;/span&gt;" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;rounded=0;" vertex="1" parent="1">
           <mxGeometry x="400" y="200" width="120" height="80" as="geometry" />
@@ -103,13 +97,37 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="SWCMXGWF6MoDXP4iUfNa-52" value="onPreloaded" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="400" y="320" width="120" height="80" as="geometry" />
+          <mxGeometry x="80" y="360" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="SWCMXGWF6MoDXP4iUfNa-60" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="SWCMXGWF6MoDXP4iUfNa-54" target="SWCMXGWF6MoDXP4iUfNa-59">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="SWCMXGWF6MoDXP4iUfNa-54" value="Preloader.destroy()" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="560" y="320" width="120" height="80" as="geometry" />
+          <mxGeometry x="240" y="360" width="120" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="SWCMXGWF6MoDXP4iUfNa-56" value="&lt;h1&gt;EventEmitter&lt;/h1&gt;&lt;p&gt;Fait appel au serveur pour savoir si toutes les images sont chargées.&lt;/p&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" vertex="1" parent="1">
-          <mxGeometry x="400" y="80" width="160" height="120" as="geometry" />
+        <mxCell id="SWCMXGWF6MoDXP4iUfNa-56" value="&lt;h1&gt;EventEmitter&lt;/h1&gt;&lt;p&gt;Fait appel au serveur pour savoir si toutes les images sont chargées. Une fois complete on lance onPreloaded()&lt;/p&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="400" y="70" width="160" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="SWCMXGWF6MoDXP4iUfNa-59" value="page.show" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="400" y="360" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="SWCMXGWF6MoDXP4iUfNa-62" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="SWCMXGWF6MoDXP4iUfNa-23" target="SWCMXGWF6MoDXP4iUfNa-52">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="550" y="410" as="sourcePoint" />
+            <mxPoint x="600" y="360" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="SWCMXGWF6MoDXP4iUfNa-63" value="" style="endArrow=none;dashed=1;html=1;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1" source="SWCMXGWF6MoDXP4iUfNa-52" target="SWCMXGWF6MoDXP4iUfNa-8">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="550" y="410" as="sourcePoint" />
+            <mxPoint x="600" y="360" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="SWCMXGWF6MoDXP4iUfNa-64" value="" style="endArrow=none;dashed=1;html=1;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="SWCMXGWF6MoDXP4iUfNa-54" target="SWCMXGWF6MoDXP4iUfNa-10">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="550" y="410" as="sourcePoint" />
+            <mxPoint x="600" y="360" as="targetPoint" />
+          </mxGeometry>
         </mxCell>
       </root>
     </mxGraphModel>
