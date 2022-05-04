@@ -10,7 +10,7 @@ import Detail from './pages/Detail'
 class App {
     constructor() {
         this.createPreloader()
-        this.creatContent()
+        this.createContent()
         this.createPages()
 
         this.addEventListeners()
@@ -23,7 +23,7 @@ class App {
         this.preloader.once('completed', this.onPreloaded.bind(this))
     }
 
-    creatContent() {
+    createContent() {
         this.content = document.querySelector('.content')
         this.template = this.content.getAttribute('data-template')
     }
@@ -33,17 +33,17 @@ class App {
             'home': new Home(),
             'about': new About(),
             'collections': new Collections(),
-            'detail': new Detail()            
+            'detail': new Detail()
         }
 
         this.page = this.pages[this.template]
+
         this.page.create()
         this.page.onResize()
     }
 
     onPreloaded() {
         this.preloader.destroy()
-
         this.page.show()
     }
 

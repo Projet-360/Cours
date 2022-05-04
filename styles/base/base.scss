@@ -23,11 +23,6 @@ body{
   font-family: $font-suisse-bp;
 }
 
-.content {
-  @extend %cover;
-  position: absolute;
-}
-
 a{
   color: inherit;
   text-decoration: none;
@@ -44,6 +39,19 @@ button{
 
 img{
   vertical-align: middle;
+}
+
+.content {
+  @extend %cover;
+  position: absolute;
+}
+
+[data-animation="title"] {
+  span {
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: top;
+  }
 }
 
 // part of the boiler plater
